@@ -18,21 +18,24 @@ const comedian = {
     tellJoke: function() {
         joke = this.jokes[this.getRandomJoke()];
         return `Knock Knock! Who's there? ${joke[0]}. ${joke[0]} who? ${joke[1]}`;
-    }
-};
-
-console.log(comedian.tellJoke());
-
-
-/*
-,
+    },
     createSetList: function(jokeCount) {
         let setList = [];
+        let jokesUsed = [];
 
         for (i = 0; i < jokeCount; i++) {
-            setList[i] = this.jokes[this.getRandomJoke()]
+            jokeIndex = this.getRandomJoke();
+
+            while (jokesUsed.includes(jokeIndex)) {
+                jokeIndex = this.getRandomJoke();
+            }
+
+            setList[i] = this.jokes[jokeIndex];
+            jokesUsed.push(jokeIndex);
         }
 
         return setList;
     }
-*/
+};
+
+console.log(comedian.createSetList(1));
