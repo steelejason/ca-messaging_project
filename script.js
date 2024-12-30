@@ -1,6 +1,5 @@
 const comedian = {
     name: 'Jason',
-    age: 38,
     jokes: [
         ['Wafer', 'Been a wafer a while, but now I\'m back.'],
         ['Gwen', 'Gwen will these jokes ever end?'],
