@@ -13,7 +13,7 @@ const comedian = {
         ['Pooch', 'Pooch your hat on, it\'s cold out.']
     ],
     getRandomJoke: function() {
-        return Math.floor(Math.random() * 5);
+        return Math.floor(Math.random() * this.jokes.length);
     },
     tellJoke: function() {
         joke = this.jokes[this.getRandomJoke()];
@@ -24,3 +24,15 @@ const comedian = {
 console.log(comedian.tellJoke());
 
 
+/*
+,
+    createSetList: function(jokeCount) {
+        let setList = [];
+
+        for (i = 0; i < jokeCount; i++) {
+            setList[i] = this.jokes[this.getRandomJoke()]
+        }
+
+        return setList;
+    }
+*/
