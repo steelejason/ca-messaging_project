@@ -15,13 +15,14 @@ const comedian = {
     getRandomJoke: function() {
         return Math.floor(Math.random() * this.jokes.length);
     },
-    tellJoke: function() {
-        joke = this.jokes[this.getRandomJoke()];
+    tellJoke: function(joke) {
         return `Knock Knock! Who's there? ${joke[0]}. ${joke[0]} who? ${joke[1]}`;
     },
     createSetList: function(jokeCount) {
         let setList = [];
         let jokesUsed = [];
+
+        jokeCount = jokeCount > this.jokes.length ? this.jokes.length : jokeCount;
 
         for (i = 0; i < jokeCount; i++) {
             jokeIndex = this.getRandomJoke();
@@ -35,7 +36,14 @@ const comedian = {
         }
 
         return setList;
+    },
+    performSet: function() {
+        let setList = this.createSetList(6);
+
+        setList.forEach( (joke) => {
+            console.log(this.tellJoke(joke));
+        });
     }
 };
 
-console.log(comedian.createSetList(1));
+comedian.performSet();
